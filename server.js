@@ -43,11 +43,17 @@ app.patch('/api/deliveries/:id/assign', (req, res) => {
     SET assigned_rider_id = ?, current_status = 'Assigned', updated_at = ? 
     WHERE id = ?`;
 
-  db.run(sql, [rider_id, updated_at, req.params.id], function(err) {
+ db.run(sql, [rider_id, updated_at, req.params.id], function(err) {
     if (err) return res.status(500).json({ error: err.message });
+
+    db.run(
+      `INSERT INTO StatusEvent (delivery_id, status, timestamp, updated_by) VALUES (?, ?, ?, ?)`,
+      [req.params.id, 'Assigned', updated_at, rider_id]
+    );
+
     res.json({ message: 'Rider assigned successfully' });
   });
-});
+}); 
 
 // Update delivery status
 app.patch('/api/deliveries/:id/status', (req, res) => {
@@ -56,11 +62,17 @@ app.patch('/api/deliveries/:id/status', (req, res) => {
 
   const sql = `UPDATE DeliveryRequest SET current_status = ?, updated_at = ? WHERE id = ?`;
 
-  db.run(sql, [status, updated_at, req.params.id], function(err) {
+ db.run(sql, [status, updated_at, req.params.id], function(err) {
     if (err) return res.status(500).json({ error: err.message });
+
+    db.run(
+      `INSERT INTO StatusEvent (delivery_id, status, timestamp) VALUES (?, ?, ?)`,
+      [req.params.id, status, updated_at]
+    );
+
     res.json({ message: 'Status updated successfully' });
   });
-});
+}); 
 
 app.listen(3000, () => {
   console.log('Server running on http://localhost:3000');
