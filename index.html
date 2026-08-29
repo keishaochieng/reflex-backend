@@ -1,72 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reflex Delivery Requests</title>
+</head>
+
 <body>
-  <h1>Reflex Delivery Requests</h1>
 
-  <h2>Create New Request</h2>
-  <form id="deliveryForm">
-    <input type="text" id="customer_name" placeholder="Customer Name" required><br><br>
-    <input type="text" id="customer_phone" placeholder="Customer Phone" required><br><br>
-    <input type="text" id="address" placeholder="Address" required><br><br>
-    <input type="text" id="item_description" placeholder="Item Description" required><br><br>
+<h1>Reflex Delivery Requests</h1>
+
+<h2>Create New Request</h2>
+
+<form id="deliveryForm">
+
+    <input type="text" id="customer_name"
+        placeholder="Customer Name" required><br><br>
+
+    <input type="text" id="customer_phone"
+        placeholder="Customer Phone" required><br><br>
+
+    <input type="text" id="address"
+        placeholder="Address" required><br><br>
+
+    <input type="text" id="item_description"
+        placeholder="Item Description" required><br><br>
+
     <button type="submit">Create Delivery Request</button>
-  </form>
 
-  <h2>All Delivery Requests</h2>
-  <button onclick="loadDeliveries()">Refresh List</button>
-  <ul id="deliveryList"></ul>
+</form>
 
-  <script>
-    document.getElementById('deliveryForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const data = {
+<h2>All Delivery Requests</h2>
+
+<button onclick="loadDeliveries()">Refresh List</button>
+
+<ul id="deliveryList"></ul>
+
+<script>
+
+document.getElementById('deliveryForm').addEventListener('submit', async (e) => {
+
+    e.preventDefault();
+
+    const data = {
         customer_name: document.getElementById('customer_name').value,
         customer_phone: document.getElementById('customer_phone').value,
         address: document.getElementById('address').value,
         item_description: document.getElementById('item_description').value
-      };
-      const res = await fetch('/api/deliveries', {
+    };
+
+    const res = await fetch('/api/deliveries', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify(data)
-      });
-      const result = await res.json();
-      alert('Created! ID: ' + result.id);
-      document.getElementById('deliveryForm').reset();
-      loadDeliveries();
     });
 
-    async function loadDeliveries() {
-      const res = await fetch('/api/deliveries');
-      const deliveries = await res.json();
-      const list = document.getElementById('deliveryList');
-      list.innerHTML = '';
-      deliveries.forEach(d => {
-        const li = document.createElement('li');
-        li.innerHTML = `${d.customer_name} - ${d.address} - <b>${d.current_status}</b>
-          <button onclick="assignRider(${d.id})">Assign Rider #1</button>
-          <button onclick="updateStatus(${d.id}, 'Picked Up')">Mark Picked Up</button>
-          <button onclick="updateStatus(${d.id}, 'Delivered')">Mark Delivered</button>`;
-        list.appendChild(li);
-      });
-    }
+    const result = await res.json();
 
-    async function assignRider(deliveryId) {
-      await fetch(`/api/deliveries/${deliveryId}/assign`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ rider_id: 1 })
-      });
-      loadDeliveries();
-    }
+    alert('Created! ID: ' + result.id);
 
-    async function updateStatus(deliveryId, status) {
-      await fetch(`/api/deliveries/${deliveryId}/status`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ status })
-      });
-      loadDeliveries();
-    }
+    document.getElementById('deliveryForm').reset();
 
     loadDeliveries();
-  </script>
+
+});
+
+async function loadDeliveries() {
+
+    const res = await fetch('/api/deliveries');
+
+    const deliveries = await res.json();
+
+    const list = document.getElementById('deliveryList');
+
+    list.innerHTML = '';
+
+    deliveries.forEach(d => {
+
+        const li = document.createElement('li');
+
+        li.innerHTML = `
+            ${d.customer_name} - ${d.address} -
+            <b>${d.current_status}</b><br>
+
+            <button onclick="assignRider(${d.id})">
+                Assign Rider #1
+            </button>
+
+            <button onclick="updateStatus(${d.id}, 'Picked Up')">
+                Mark Picked Up
+            </button>
+
+            <button onclick="updateStatus(${d.id}, 'Delivered')">
+                Mark Delivered
+            </button>
+        `;
+
+        list.appendChild(li);
+
+    });
+}
+
+async function assignRider(deliveryId) {
+
+    await fetch(`/api/deliveries/${deliveryId}/assign`, {
+
+        method: 'PATCH',
+
+        headers: {
+            'Content-Type': 'application/json'
+        },
+
+        body: JSON.stringify({
+            rider_id: 1
+        })
+
+    });
+
+    loadDeliveries();
+}
+
+async function updateStatus(deliveryId, status) {
+
+    await fetch(`/api/deliveries/${deliveryId}/status`, {
+
+        method: 'PATCH',
+
+        headers: {
+            'Content-Type': 'application/json'
+        },
+
+        body: JSON.stringify({
+            status
+        })
+
+    });
+
+    loadDeliveries();
+}
+
+loadDeliveries();
+
+</script>
+
 </body>
+</html>
