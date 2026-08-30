@@ -8,14 +8,14 @@ This log records our dry-run rehearsals for the Reflex Readiness Sprint presenta
 
 | Section | Time |
 |---|---|
-| Opening + Problem | |
-| Solution | |
-| Architecture | |
-| Edge Case | |
-| Trade-offs | |
-| Live Demo | |
-| Roadmap + Close | |
-| **Total** | |
+| Opening + Problem |50 seconds |
+| Solution |2 minutes |
+| Architecture |4minutes |
+| Edge Case |3 minutes |
+| Trade-offs |3 minutes |
+| Live Demo |2 minutes |
+| Roadmap + Close |45 seconds |
+| **Total** |15 minutes and 30 seconds |
 
 **Notes:**
 - What felt rushed:
