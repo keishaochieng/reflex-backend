@@ -1,10 +1,10 @@
 # Reflex – Presentation Timing Log
 
-This log records our dry-run rehearsals for the Reflex Readiness Sprint presentation, tracking timing per section and what we adjusted between runs.
+This log records dry-run rehearsals for the Reflex Readiness Sprint presentation, tracking timing per section and what is adjusted between runs.
 
 ---
 
-## Dry Run 1 — [Date]
+## Dry Run 1 — [8/30/2026]
 
 | Section | Time |
 |---|---|
@@ -15,36 +15,36 @@ This log records our dry-run rehearsals for the Reflex Readiness Sprint presenta
 | Trade-offs |3 minutes |
 | Live Demo |2 minutes |
 | Roadmap + Close |45 seconds |
-| **Total** |15 minutes and 30 seconds |
+| **Total** |15 minutes and 35 seconds |
 
 **Notes:**
-- What felt rushed:
-- Where I blanked or hesitated:
-- What to fix before next run:
+- What felt rushed: Roadmaps part
+- Where I blanked or hesitated: Architecture and Edge Case parts
+- What to fix before next run: Summarize the architecture and Edge Case parts to make it much easier to explain. Use points to explain roadmaps explicitly.
 
 ---
 
-## Dry Run 2 — [Date]
+## Dry Run 2 — [8/30/2026]
 
 | Section | Time |
 |---|---|
-| Opening + Problem | |
-| Solution | |
-| Architecture | |
-| Edge Case | |
-| Trade-offs | |
-| Live Demo | |
-| Roadmap + Close | |
-| **Total** | |
+| Opening + Problem | 35 seconds |
+| Solution |50 seconds |
+| Architecture |35 seconds |
+| Edge Case |1 minute |
+| Trade-offs |2 minutes |
+| Live Demo |2 minutes |
+| Roadmap + Close |1 minute |
+| **Total** | 8 minutes  |
 
 **Notes:**
-- Improvements from Run 1:
-- What still felt off:
-- Final adjustments made:
+- Improvements from Run 1:Taken less time to explain Architecture and Edge Cases parts, gave brief but detailed explanation on the Roadmap part.
+- What still felt off: The whole presentation took a bit long to finish.
+- Final adjustments made: Use of flash cards to guide me in saying the atual information without beating about the bush and wasting time.
 
 ---
 
 ## Summary
 - Target time: 5 minutes
-- Final rehearsed time: [fill in after Run 2]
-- Confidence level going into presentation: [1-10]
+- Final rehearsed time: [8 minutes 50 seconds]
+- Confidence level going into presentation: [4.5-10]
