@@ -7,7 +7,7 @@ A delivery coordination system for small Kenyan retailers, built for the Reflex 
 - **Frontend** — Muuo (Dennis Kyungu)
 - **Trade-offs & Roadmap** — Sara (Adiba Sarah)
 - **Edge Cases** — Isaac Mutai
-- **Presentation & Demo** — Ezra Kuteres (Ezra Kipsang)
+- **Presentation Slides for Demo** — Ezra Kuteres (Ezra Kipsang)
 
 ## Contents
 - `server.js`, `db.js`, `index.html` — working application code
