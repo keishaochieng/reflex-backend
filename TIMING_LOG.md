@@ -19,8 +19,8 @@ This log records dry-run rehearsals for the Reflex Readiness Sprint presentation
 
 **Notes:**
 - What felt rushed: Roadmaps part
-- Where I blanked or hesitated: Architecture and Edge Case parts
-- What to fix before next run: Summarize the architecture and Edge Case parts to make it much easier to explain. Use points to explain roadmaps explicitly.
+- Where team member blanked or hesitated: Architecture and Edge Case parts.
+- What to fix before next run: Summarize the architecture and Edge Case parts to make it much easier to explain. Use point form to explain roadmaps explicitly.
 
 ---
 
@@ -39,12 +39,12 @@ This log records dry-run rehearsals for the Reflex Readiness Sprint presentation
 
 **Notes:**
 - Improvements from Run 1:Taken less time to explain Architecture and Edge Cases parts, gave brief but detailed explanation on the Roadmap part.
-- What still felt off: The whole presentation took a bit long to finish.
-- Final adjustments made: Use of flash cards to guide me in saying the atual information without beating about the bush and wasting time.
+- What still felt off: The whole presentation took a bit too long to finish.
+- Final adjustments made: Use of flash cards to guide in saying the actual information without beating around the bush and wasting time.
 
 ---
 
 ## Summary
 - Target time: 5 minutes
-- Final rehearsed time: [8 minutes 50 seconds]
+- Final rehearsed time: [8 minutes 50 ]
 - Confidence level going into presentation: [4.5-10]
