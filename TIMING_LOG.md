@@ -47,4 +47,4 @@ This log records dry-run rehearsals for the Reflex Readiness Sprint presentation
 ## Summary
 - Target time: 5 minutes
 - Final rehearsed time: [8 minutes]
-- Confidence level going into presentation: [4.5-10]
+- Confidence level going into presentation: [4.5/10]
