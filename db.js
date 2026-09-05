@@ -47,4 +47,14 @@ db.serialize(() => {
   console.log('All tables created successfully');
 });
 
+db.get('SELECT COUNT(*) as count FROM Rider', [], (err, row) => {
+  if (!err && row.count === 0) {
+    db.run(
+      `INSERT INTO Rider (name, phone, availability, created_at) VALUES (?, ?, ?, ?)`,
+      ['John Kamau', '0712345678', 'available', new Date().toISOString()]
+    );
+    console.log('Auto-seeded default rider');
+  }
+});
+
 module.exports = db;
