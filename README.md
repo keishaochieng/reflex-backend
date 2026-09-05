@@ -13,4 +13,5 @@ A delivery coordination system for small Kenyan retailers, built for the Reflex 
 - `server.js`, `db.js`, `index.html` — working application code
 - `API.md` — API documentation
 - `TIMING_LOG.md` — presentation dry-run timing log
+- DEMO_SCRIPT.md
 - Trade-offs, roadmap, edge cases, and final deck — included as submitted documents
